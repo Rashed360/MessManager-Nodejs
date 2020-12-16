@@ -1,0 +1,23 @@
+<%- include('partials/header'); %>
+<h1 class="h3 mb-4 text-gray-800">Money</h1>
+
+<div class="card shadow mb-3">
+  <div class="card-header">
+    <div class="mb-0 font-weight-bold text-gray-800">Money Received form Members</div>
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <% record.forEach((row) => { %>
+      <tr>
+        <td><%= row.memName %></td>
+        <td><%= row.mType %></td>
+        <td><%= row.amount %></td>
+        <td><span class="small"><%= row.date %></span></td>
+      </tr>
+      <% }) %>
+    </table>
+  </div>
+  <div class="card-footer"></div>
+</div>
+
+<%- include('partials/footer'); %>

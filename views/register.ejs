@@ -1,0 +1,104 @@
+<body class="bg-gradient-secondary">
+  <div class="container">
+    <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card-body p-0">
+        <div class="row">
+          <div class="col-lg-5 d-lg-block bg-login-image">
+            <div class="container" style="margin-top: 15px">
+              <%- include('partials/msgs'); %>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+              </div>
+
+              <form class="user" action="/users/register" method="POST"  autocomplete="off">
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input
+                      type="text"
+                      id="fName"
+                      name="fName"
+                      class="form-control form-control-user"
+                      placeholder="First Name"
+                      value="<%= typeof fName != 'undefined' ? fName : '' %>"
+                    />
+                  </div>
+                  <div class="col-sm-6">
+                    <input
+                      type="text"
+                      id="lName"
+                      name="lName"
+                      class="form-control form-control-user"
+                      placeholder="Last Name"
+                      value="<%= typeof lName != 'undefined' ? lName : '' %>"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-control form-control-user"
+                    placeholder="Email Address"
+                    value="<%= typeof email != 'undefined' ? email : '' %>"
+                  />
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      class="form-control form-control-user"
+                      placeholder="Password"
+                      value="<%= typeof password != 'undefined' ? password : '' %>"
+                    />
+                  </div>
+
+                  <div class="col-sm-6">
+                    <input
+                      type="password"
+                      id="password2"
+                      name="password2"
+                      class="form-control form-control-user"
+                      placeholder="Repeat Password"
+                      value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+                    />
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-user btn-block"
+                >
+                  Register
+                </button>
+                <hr />
+                <div class="text-center">
+                  <p>Already have an account? Login!</p>
+                </div>
+                <a
+                  href="/users/login"
+                  class="btn btn-secondary btn-user btn-block"
+                >
+                  Login
+                </a>
+                <hr />
+              </form>
+
+              <div class="text-center">
+                <a class="small" href="/">Mess Manager &copy; 2020</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,23 @@
+<%- include('partials/header'); %>
+<h1 class="h3 mb-4 text-gray-800">Notice</h1>
+
+<div class="card shadow mb-3">
+  <div class="card-header">
+    <div class="mb-0 font-weight-bold text-gray-800">Notices</div>
+  </div>
+  <div class="card-body">
+    <% records.forEach((row) => { %>
+    <div class="row">
+      <div class="col-sm-2"><%= row.noticeTitle %></div>
+      <div class="col-sm-6 text-secondary"><%= row.noticeBody %></div>
+      <div class="col-sm-4 text-secondary">
+        <p class="small"><%= row.date %></p>
+      </div>
+    </div>
+    <hr />
+    <% }) %>
+  </div>
+  <div class="card-footer"></div>
+</div>
+
+<%- include('partials/footer'); %>

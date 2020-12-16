@@ -1,0 +1,29 @@
+<%- include('partials/header'); %>
+<h1 class="h3 mb-4 text-gray-800">Monthly Meal Chart</h1>
+
+<div class="row">
+  <!---->
+  <% records.forEach((row) => { %>
+  <div class="col-xl-3 col-md-4 mb-6">
+    <div class="card border-primary shadow mb-3" style="max-width: 20rem">
+      <div class="card-header">
+        <div class="h4 mb-0 font-weight-bold text-gray-800"><%= row.date %></div>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
+            <% row.consumer.forEach((data) => { %>
+            <tr>
+              <td><%= data.memName %></td>
+              <td><%= data.quantity %></td>
+            </tr>
+            <% }) %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% }) %>
+  <!---->
+</div>
+<%- include('partials/footer'); %>

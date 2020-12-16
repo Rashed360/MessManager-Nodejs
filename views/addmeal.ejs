@@ -1,0 +1,81 @@
+<%- include('partials/header'); %>
+<h1 class="h3 mb-4 text-gray-800">Add Meal</h1>
+<div class="card shadow mb-4">
+  <a
+    href="#collapseCardExample"
+    class="d-block card-header py-3"
+    data-toggle="collapse"
+    role="button"
+    aria-expanded="true"
+    aria-controls="collapseCardExample"
+  >
+    <h6 class="m-0 font-weight-bold text-primary">
+      <i class="fas fa-fw fa-cookie-bite"></i>
+      Add Meal Entry
+    </h6>
+  </a>
+
+  <div class="collapse show" id="collapseCardExample">
+    <div class="card-body">
+      <!-- hi -->
+      <div class="p-5">
+        <form class="user" action="" method="" autocomplete="off">
+          <div class="row"><%- include('partials/msgs'); %></div>
+
+          <div class="form-group row">
+            <div class="col-sm-5">
+              <label class="text-gray-900 float-right">Meal Consumption Date : </label>
+            </div>
+            <div class="col-sm-7">
+              <input
+                id="date"
+                name="date"
+                type="text"
+                placeholder="e.g. Feb 28 "
+                value="<%= typeof date != 'undefined' ? date : '' %>"
+                class="form-control"
+              />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+              <span>Members Names</span>
+            </div>
+            <div class="col-sm-6 mb-3 mb-sm-0">
+              <span>Meal Consumption</span>
+            </div>
+          </div>
+          <% records.forEach((row) => { %>
+          <div class="form-group row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+              <fieldset disabled="">
+                <input class="form-control" id="memName" type="text" value="<%= row.fName %>" />
+              </fieldset>
+            </div>
+            <div class="col-sm-6">
+              <input id="amount" name="amount" type="number" class="form-control" />
+            </div>
+          </div>
+          <% }) %>
+          <div class="form-group row">
+            <div class="col-sm-6">
+              <button type="reset" class="btn btn-secondary btn-block">
+                <i class="fas fa-fw fa-ban"></i>
+                Reset
+              </button>
+            </div>
+            <div class="col-sm-6 mb-3 mb-sm-0">
+              <button type="submit" class="btn btn-primary btn-block">
+                <i class="fas fa-fw fa-plus"></i>
+                Add Meal
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- hi -->
+  </div>
+</div>
+<%- include('partials/footer'); %>
