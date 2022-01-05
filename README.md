@@ -1,10 +1,8 @@
 # MessManager
-
-Makes Mess Life Easier!
+Node.js Project
 
 ## Description
-
-MessManager can be used to manage and organize everyday task of a Mess!
+Used to manage and organize everyday task of a Mess!
 
 ## Dependencies 
 ```json
